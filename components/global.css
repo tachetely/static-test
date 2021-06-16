@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2012/09/06/12836/019262bdc9704d3d8ed23f0176f47746.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 16px;
+  font-family: "Cambria";
+  color: #333;
+}
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+}
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+button {
+  outline: none;
+  border: none;
+}
+
+.fixed-region {
+  z-index: 1;
+  background: rgba(170,170,170,0.75);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.title-area {
+  display: flex;
+}
+.title {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.3);  
+  width: 100%;
+}
+.toggle {
+  font-size: 1.25rem;
+}
+.toggle[aria-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.nav {
+  flex: 1;
+}
+.nav ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.nav ul li, .toggle {
+  line-height: 1rem;
+  padding: 0.5rem 0.7rem;
+  background-color: white;
+  margin-left: 1rem;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+  border-radius: 2px;
+}
+
+
+
+
+
+.media-container, .fixed-container {
+  margin: auto;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+.media-container {
+  margin-top: 1rem;
+  padding: 1rem 2.5rem 1rem 2.5rem;
+  background-color: white;
+}
+.fixed-container {
+  display: flex;
+}
+.top-inner {
+  padding: 1rem 2.5rem 1rem 2.5rem;
+}
+.top.second {
+  width: 100%;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .gray-area {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,0.3);
+    top: 0px;
+    left: 0px;
+    transition: opacity 0.3s ease;
+  }
+  .gray-area[aria-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .fixed-region {
+    background: none;
+  }
+  .top {
+    background: #aaa;
+    position: relative;
+  }
+  .top:not(.second) {
+    z-index: 1;
+  }
+  .top.second {
+    background: #999;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease;
+  }
+  .top.second .top-inner {
+    padding: 0rem 2.5rem 1rem 2.5rem;
+  }
+  .top.second[aria-hidden="true"] {
+    transform: translateY(-100%);    
+    pointer-events: none;
+    user-select: none;
+  }
+  .media-container, .top-inner {
+    max-width: 450px;
+  }
+  .top-inner {
+    margin: auto;
+    width: 100%;
+    position: relative;
+  }
+  .fixed-container {
+    display: block;
+  }
+  .nav ul li {
+    margin-top: 1rem;
+  }
+}
